@@ -44,11 +44,8 @@ var app  = new Framework7({
     init: function () {
       console.log('App initialized');
       _this = this
-      console.log(_this);
-      this.request.json('http://www.mocky.io/v2/5ab9fbd1350000550073a32c', function (data, a, b, _this) {
-        console.log(data);
-        console.log(a);
-        console.log(b);
+      this.request.json('http://www.mocky.io/v2/5ab9fbd1350000550073a32c', function (data) {
+        console.log(app.data);
 
       });
 
