@@ -40,27 +40,7 @@ var app  = new Framework7({
       app.dialog.alert('Hello World!');
     },
   },
-  on: {
-    init: function () {
-      // $this = ['yo']
-      // this.request.json('http://www.mocky.io/v2/5ab9fbd1350000550073a32c', function (data) {
-      //   app.data.push()
-      //   console.log('$this', $this);
-      // });
 
-      this.request({
-       url: 'http://www.mocky.io/v2/5ab9fbd1350000550073a32c',
-       statusCode: {
-         404: function (xhr) {
-           alert('page not found');
-         },
-         200: function (xhr){
-           app.data["experiences"] = xhr.response
-         }
-       }
-     })
-
-    },
   // App routes
   routes: routes,
 });

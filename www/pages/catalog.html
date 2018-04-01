@@ -8,8 +8,8 @@
     <div class="page-content">
       <div class="list links-list">
         <ul>
-          {{#each products}}
-            <li><a href="/product/{{id}}/">{{title}}</a></li>
+          {{#each experiences}}
+            <li><a href="/product/{{lat}}/">{{city}}</a></li>
           {{/each}}
         </ul>
       </div>
@@ -20,7 +20,7 @@
   return {
     data: function () {
       return {
-        products: this.$root.products,
+        experiences: this.$root.experiences,
       };
     }
   };

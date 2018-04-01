@@ -8,13 +8,15 @@
             <span class="ios-only">Back</span>
           </a>
         </div>
-        <div class="title">{{product.title}}</div>
+        <div class="title">{{product.city}}</div>
       </div>
     </div>
     <div class="page-content">
-      <div class="block-title">About {{product.title}}</div>
+      <div class="block-title">About {{product.city}}</div>
       <div class="block block-strong">
-        {{product.description}}
+         Latitude:  {{product.lat}}
+         <p></p>
+         Longitude: {{product.lat}}
       </div>
     </div>
   </div>
@@ -24,8 +26,8 @@
     data: function () {
       var productId = this.$route.params.id;
       var currentProduct;
-      this.$root.products.forEach(function (product) {
-        if (product.id === productId) {
+      this.$root.experiences.forEach(function (product) {
+        if (product.lat.toString() === productId) {
           currentProduct = product;
         }
       });

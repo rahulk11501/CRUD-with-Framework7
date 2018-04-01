@@ -9,7 +9,29 @@ routes = [
   },
   {
     path: '/catalog/',
-    componentUrl: './pages/catalog.html',
+    async(routeTo, routeFrom, resolve, reject) {
+      app.request({
+         url: 'http://www.mocky.io/v2/5ab9fbd1350000550073a32c',
+         statusCode: {
+           404: function (xhr) {
+             alert('page not found');
+           },
+           200: function (xhr){
+             app.data["experiences"] = JSON.parse(xhr.response).locations
+             resolve(
+                {
+                  componentUrl: './pages/catalog.html'
+                },
+                // pass context
+                {
+                  context: app.data
+                }
+              );
+
+           }
+         }
+      })
+    }
   },
   {
     path: '/product/:id/',
