@@ -49,8 +49,8 @@ var app  = new Framework7({
 var homeView = app.views.create('#view-home', {
   url: '/'
 });
-var catalogView = app.views.create('#view-catalog', {
-  url: '/catalog/'
+var experiencesView = app.views.create('#view-experiences', {
+  url: '/experiences/'
 });
 var settingsView = app.views.create('#view-settings', {
   url: '/settings/'

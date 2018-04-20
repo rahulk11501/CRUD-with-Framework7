@@ -8,7 +8,7 @@ routes = [
     url: './pages/about.html',
   },
   {
-    path: '/catalog/',
+    path: '/experiences/',
     async(routeTo, routeFrom, resolve, reject) {
       app.request({
          url: 'http://www.mocky.io/v2/5ad9b4462f00005400cfdeb9',
@@ -21,7 +21,7 @@ routes = [
              console.log(app.data["experiences"])
              resolve(
                 {
-                  componentUrl: './pages/catalog.html'
+                  componentUrl: './pages/experiences.html'
                 },
                 // pass context
                 {
