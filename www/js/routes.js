@@ -11,13 +11,14 @@ routes = [
     path: '/catalog/',
     async(routeTo, routeFrom, resolve, reject) {
       app.request({
-         url: 'http://www.mocky.io/v2/5ab9fbd1350000550073a32c',
+         url: 'http://www.mocky.io/v2/5ad9b4462f00005400cfdeb9',
          statusCode: {
            404: function (xhr) {
              alert('page not found');
            },
            200: function (xhr){
-             app.data["experiences"] = JSON.parse(xhr.response).locations
+             app.data["experiences"] = JSON.parse(xhr.response).experiences
+             console.log(app.data["experiences"])
              resolve(
                 {
                   componentUrl: './pages/catalog.html'

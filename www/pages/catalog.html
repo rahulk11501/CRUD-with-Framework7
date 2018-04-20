@@ -2,14 +2,16 @@
   <div class="page" data-name="catalog">
     <div class="navbar">
       <div class="navbar-inner sliding">
-        <div class="title">Catalog</div>
+        <div class="title">Experiences of Mumbai</div>
       </div>
     </div>
     <div class="page-content">
       <div class="list links-list">
         <ul>
           {{#each experiences}}
-            <li><a href="/product/{{lat}}/">{{city}}</a></li>
+            <li>
+              <a href="/product/{{id}}/">{{title}} <{{id}}></a>
+            </li>
           {{/each}}
         </ul>
       </div>

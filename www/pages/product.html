@@ -8,15 +8,17 @@
             <span class="ios-only">Back</span>
           </a>
         </div>
-        <div class="title">{{product.city}}</div>
+        <div class="title">{{experience.city}}</div>
       </div>
     </div>
     <div class="page-content">
-      <div class="block-title">About {{product.city}}</div>
+      <div class="block-title">About {{experience.city}}</div>
       <div class="block block-strong">
-         Latitude:  {{product.lat}}
+         <p> <img data-src={{experience["main_images"][0]["url"]}} width="300" height="300" class="lazy lazy-fade-in demo-lazy"/></p>
+
+         Title:  {{experience.title}}
          <p></p>
-         Longitude: {{product.lat}}
+         Headline: {{experience.headline}}
       </div>
     </div>
   </div>
@@ -24,15 +26,15 @@
 <script>
   return {
     data: function () {
-      var productId = this.$route.params.id;
-      var currentProduct;
-      this.$root.experiences.forEach(function (product) {
-        if (product.lat.toString() === productId) {
-          currentProduct = product;
+      var experienceId = this.$route.params.id;
+      var currentExperience;
+      this.$root.experiences.forEach(function (experience) {
+        if (experience.id.toString() === experienceId) {
+          currentExperience = experience;
         }
       });
       return {
-        product: currentProduct,
+        experience: currentExperience,
       };
     }
   };
